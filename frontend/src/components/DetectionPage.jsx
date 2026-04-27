@@ -252,6 +252,10 @@ export default function DetectionPage() {
     setWord("")
   }, [])
 
+  const handleClearHistory = useCallback(() => {
+    setHistory([])
+  }, [])
+
   const toggleFullscreen = useCallback(() => {
     setIsFullscreen((prev) => !prev)
   }, [])
@@ -329,7 +333,7 @@ export default function DetectionPage() {
             onAddLetter={handleAddLetter}
             onClear={handleClearWord}
           />
-          <HistoryLog history={history} />
+          <HistoryLog history={history} onClear={handleClearHistory} />
         </div>
       </div>
     </div>
